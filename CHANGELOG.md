@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2025-07-26
+
 - Upgraded `birl` to v1.8.0.
 - Upgraded `gleam_erlang` to v1.2.0.
 - Upgraded `gleam_otp` to v1.0.0.
@@ -17,4 +19,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release.
 
 [unreleased]: https://github.com/maxdeviant/bigben/compare/v1.0.0...HEAD
+[1.0.1]: https://github.com/maxdeviant/bigben/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/maxdeviant/bigben/compare/0981a32...v1.0.0
