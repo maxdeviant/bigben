@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Switched to using `gleam_time` instead of `birl`.
+  - All `birl.Time` usages have been replaced with `gleam/time/timestamp.Timestamp`.
+  - All `birl.Duration` usages have been replaced with `gleam/time/duration.Duration`.
+
 ## [1.0.1] - 2025-07-26
 
 ### Changed
