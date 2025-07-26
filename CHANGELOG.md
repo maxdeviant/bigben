@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2025-05-26
+
 ### Changed
 
 - Switched to using `gleam_time` instead of `birl`.
@@ -26,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release.
 
-[unreleased]: https://github.com/maxdeviant/bigben/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/maxdeviant/bigben/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/maxdeviant/bigben/compare/v1.0.1...v2.0.0
 [1.0.1]: https://github.com/maxdeviant/bigben/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/maxdeviant/bigben/compare/0981a32...v1.0.0
