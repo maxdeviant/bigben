@@ -1,20 +1,20 @@
 //// A clock.
 
 import bigben/fake_clock.{type FakeClock}
-import birl.{type Time}
+import gleam/time/timestamp.{type Timestamp}
 
 /// A clock.
 pub opaque type Clock {
-  Clock(utc_now: fn() -> Time)
+  Clock(utc_now: fn() -> Timestamp)
 }
 
 /// Returns a new `Clock`.
 pub fn new() -> Clock {
-  Clock(birl.utc_now)
+  Clock(timestamp.system_time)
 }
 
-/// Returns the current time on the given `Clock`, in UTC.
-pub fn now(clock: Clock) -> Time {
+/// Returns the current time on the given `Clock`.
+pub fn now(clock: Clock) -> Timestamp {
   clock.utc_now()
 }
 
