@@ -5,10 +5,9 @@ licenses = ["MIT"]
 repository = { type = "github", user = "maxdeviant", repo = "bigben" }
 
 [dependencies]
-gleam_erlang = ">= 1.2.0 and < 2.0.0"
-gleam_otp = ">= 1.0.0 and < 2.0.0"
 gleam_stdlib = ">= 0.62.0 and < 1.0.0"
 gleam_time = ">= 1.4.0 and < 2.0.0"
+interior = ">= 1.0.0 and < 2.0.0"
 
 [dev-dependencies]
 gleeunit = ">= 1.6.1 and < 2.0.0"

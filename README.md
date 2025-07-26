@@ -3,6 +3,7 @@
 [![Package Version](https://img.shields.io/hexpm/v/bigben)](https://hex.pm/packages/bigben)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/bigben/)
 ![Erlang-compatible](https://img.shields.io/badge/target-erlang-b83998)
+![JavaScript-compatible](https://img.shields.io/badge/target-javascript-f1e05a)
 
 🕰️ A clock abstraction, with time travel.
 
