@@ -19,13 +19,14 @@ pub fn new() -> FakeClock {
 
 /// Returns a new `FakeClock` at the given time.
 pub fn new_at(now: Time) -> FakeClock {
-  let assert Ok(subject) = actor.start(now, handle_message)
-  FakeClock(subject)
+  let assert Ok(actor) =
+    actor.new(now) |> actor.on_message(handle_message) |> actor.start
+  FakeClock(actor.data)
 }
 
 /// Returns the current time on the given `FakeClock`.
 pub fn now(clock: FakeClock) -> Time {
-  process.call(clock.subject, Get, 10)
+  process.call(clock.subject, 10, Get)
 }
 
 /// Sets the current time on the given `FakeClock` to the specified value.
@@ -44,7 +45,7 @@ type Message {
   Advance(Duration)
 }
 
-fn handle_message(message: Message, state: Time) {
+fn handle_message(state: Time, message: Message) {
   case message {
     Get(client) -> {
       process.send(client, state)
