@@ -16,37 +16,44 @@ gleam add bigben
 ```gleam
 import bigben/clock.{type Clock}
 import bigben/fake_clock
-import birl
-import birl/duration
+import gleam/int
 import gleam/io
+import gleam/time/calendar
+import gleam/time/duration
+import gleam/time/timestamp
 
 pub fn main() {
   // In your production code, you'll use the real `Clock` to get the time
   // from the system:
   let clock = clock.new()
-  what_day_is_it(clock) // Today is Monday.
+  what_day_is_it(clock)
+  // Today is July 26, 2025.
 
   // In test code you can construct a `FakeClock`:
-  let assert Ok(now) = birl.parse("2024-04-08T02:26:31.464Z")
+  let assert Ok(now) = timestamp.parse_rfc3339("2024-04-08T02:26:31.464Z")
   let fake_clock = fake_clock.new_at(now)
   // and pass it off as a real `Clock`:
   let clock = clock.from_fake(fake_clock)
 
-  what_day_is_it(clock) // Today is Monday.
+  what_day_is_it(clock)
+  // Today is April 8, 2024.
 
   // We can then manipulate the clock to help us in our tests:
-  fake_clock.advance(fake_clock, duration.days(4))
+  fake_clock.advance(fake_clock, duration.hours(4 * 24))
 
-  what_day_is_it(clock) // Today is Friday.
+  what_day_is_it(clock)
+  // Today is April 12, 2024.
 }
 
 fn what_day_is_it(clock: Clock) {
-  let day_of_the_week =
-    clock
-    |> clock.now
-    |> birl.string_weekday
+  let #(date, _time) =
+    clock |> clock.now |> timestamp.to_calendar(calendar.utc_offset)
 
-  io.println("Today is " <> day_of_the_week <> ".")
+  let month = date.month |> calendar.month_to_string
+  let day = date.day |> int.to_string
+  let year = date.year |> int.to_string
+
+  io.println("Today is " <> month <> " " <> day <> ", " <> year <> ".")
 }
 ```
 
