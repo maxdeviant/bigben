@@ -2,6 +2,7 @@
 
 [![Package Version](https://img.shields.io/hexpm/v/bigben)](https://hex.pm/packages/bigben)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/bigben/)
+![Erlang-compatible](https://img.shields.io/badge/target-erlang-b83998)
 
 🕰️ A clock abstraction, with time travel.
 
@@ -56,7 +57,3 @@ fn what_day_is_it(clock: Clock) {
   io.println("Today is " <> month <> " " <> day <> ", " <> year <> ".")
 }
 ```
-
-## Targets
-
-`bigben` supports the Erlang target.
